@@ -1,8 +1,12 @@
 package pyoji
 
 var COVER = make(map[string]bool)
+var ACTIVE = false
 
 func Got(name string) {
+	if !ACTIVE {
+		return
+	}
 	COVER[name] = true
 }
 

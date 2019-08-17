@@ -3,6 +3,9 @@ package pyoji
 import "testing"
 
 func TestAll(t *testing.T) {
+	ACTIVE = true
+	defer func(){ ACTIVE = false }()
+
 	Reset()
 	if Count() != 0 {
 		t.Error("start count not zero ")
